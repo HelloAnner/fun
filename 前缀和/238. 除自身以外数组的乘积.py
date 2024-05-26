@@ -28,4 +28,8 @@ from typing import List
 
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
+<<<<<<< HEAD
         return 0
+=======
+        return -1
+>>>>>>> 3809802a96e927e61b1cfc05605e675c4726f574
