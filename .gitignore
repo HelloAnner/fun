@@ -2,3 +2,7 @@
 .vscode/
 
 **/.ipynb_checkpoints
+
+# Added by cargo
+
+/target
