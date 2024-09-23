@@ -1,5 +1,6 @@
 // https://leetcode.cn/problems/length-of-the-longest-alphabetical-continuous-substring/?envType=daily-question&envId=2024-09-19
 
+#[allow(dead_code)]
 pub fn longest_continuous_substring(s: String) -> i32 {
     let mut ans = 1;
     let mut cnt = 1;

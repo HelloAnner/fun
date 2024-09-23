@@ -6,6 +6,7 @@
 //
 // https://leetcode.cn/problems/best-sightseeing-pair/description/?envType=daily-question&envId=2024-09-22
 
+#[allow(dead_code)]
 pub fn max_score_sightseeing_pair(values: Vec<i32>) -> i32 {
     let mut ans = 0;
     let mut mx = 0; // values[i] + i 的最大值

@@ -14,7 +14,12 @@
 https://leetcode.cn/problems/the-latest-time-to-catch-a-bus/description/?envType=daily-question&envId=2024-09-18
 
  */
-pub fn latest_time_catch_the_bus(mut buses: Vec<i32>, mut passengers: Vec<i32>, capacity: i32) -> i32 {
+#[allow(dead_code)]
+pub fn latest_time_catch_the_bus(
+    mut buses: Vec<i32>,
+    mut passengers: Vec<i32>,
+    capacity: i32,
+) -> i32 {
     buses.sort_unstable();
     passengers.sort_unstable();
 
@@ -31,11 +36,14 @@ pub fn latest_time_catch_the_bus(mut buses: Vec<i32>, mut passengers: Vec<i32>, 
 
     // 寻找插队时机
     j -= 1;
-    let mut ans = if c > 0 { *buses.last().unwrap() } else { passengers[j] };
+    let mut ans = if c > 0 {
+        *buses.last().unwrap()
+    } else {
+        passengers[j]
+    };
     while j < passengers.len() && ans == passengers[j] {
         ans -= 1; // 往前找没人到达的时刻
         j -= 1;
     }
     ans
 }
-

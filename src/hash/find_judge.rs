@@ -13,6 +13,7 @@ use std::collections::HashMap;
 
 // https://leetcode.cn/problems/find-the-town-judge/description/?envType=daily-question&envId=2024-09-22
 
+#[allow(dead_code)]
 pub fn find_judge(n: i32, trust: Vec<Vec<i32>>) -> i32 {
     let mut in_degree = HashMap::new();
     let mut out_degress = HashMap::new();
@@ -21,13 +22,11 @@ pub fn find_judge(n: i32, trust: Vec<Vec<i32>>) -> i32 {
         *out_degress.entry(t[0]).or_insert(0) += 1;
     }
     let my_vec: Vec<_> = (0..=n).step_by(1).collect();
-    match my_vec.iter().skip(1).position(|&x|
+    match my_vec.iter().skip(1).position(|&x| {
         out_degress.get(&x).cloned().unwrap_or(0) == 0
             && in_degree.get(&x).cloned().unwrap_or(0) == n - 1
-    ) {
+    }) {
         Some(i) => i as i32 + 1,
         None => -1,
     }
 }
-
-
