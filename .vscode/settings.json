@@ -4,10 +4,10 @@
     "editor.formatOnPaste": true,
     "editor.fontFamily": "JetBrains Mono",
     "editor.fontWeight": "bold",
-    "editor.fontSize": 14, // 你可以根据需要调整字体大小
-    "editor.lineHeight": 20, // 你可以根据需要调整行高
-    "terminal.integrated.fontFamily": "JetBrains Mono", // 如果你也想在集成终端中使用相同的字体
-    "terminal.integrated.fontWeight": "bold", // 如果你也想在集成终端中使用加粗字体
+    "editor.fontSize": 14,
+    "editor.lineHeight": 20,
+    "terminal.integrated.fontFamily": "JetBrains Mono",
+    "terminal.integrated.fontWeight": "bold",
     "[rust]": {
         "editor.defaultFormatter": "rust-lang.rust-analyzer",
         "editor.formatOnSave": true
