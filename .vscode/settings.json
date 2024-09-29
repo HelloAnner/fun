@@ -1,5 +1,4 @@
 {
-    "pasteImage.basePath": "${currentFileDir}/images",
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "editor.fontFamily": "JetBrains Mono",

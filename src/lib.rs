@@ -4,6 +4,7 @@ mod dp;
 mod greedy;
 mod hash;
 mod math;
+mod monotonic_tack;
 mod simulation;
 mod sliding_window;
 mod string;
