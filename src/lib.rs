@@ -3,6 +3,7 @@ mod common_prefix;
 mod dp;
 mod greedy;
 mod hash;
+mod heap;
 mod math;
 mod monotonic_tack;
 mod simulation;
