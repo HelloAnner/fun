@@ -6,10 +6,10 @@ impl Solution {
     #[allow(dead_code)]
     pub fn coin_change(coins: Vec<i32>, amount: i32) -> i32 {
         let mut memo = HashMap::new();
-        Self::dfs(&coins, amount, &mut memo)
+        Self::dfs_coin_change(&coins, amount, &mut memo)
     }
 
-    fn dfs(coins: &Vec<i32>, c: i32, memo: &mut HashMap<i32, i32>) -> i32 {
+    fn dfs_coin_change(coins: &Vec<i32>, c: i32, memo: &mut HashMap<i32, i32>) -> i32 {
         match memo.get(&c) {
             Some(&val) => return val,
             None => {
@@ -21,7 +21,7 @@ impl Solution {
                 let mut min_coins = i32::MAX;
                 for coin in coins.iter() {
                     if *coin <= c {
-                        let sub_coins = Self::dfs(coins, c - *coin, &mut memo.clone());
+                        let sub_coins = Self::dfs_coin_change(coins, c - *coin, &mut memo.clone());
                         if sub_coins != i32::MAX && sub_coins + 1 < min_coins {
                             min_coins = sub_coins + 1;
                         }
