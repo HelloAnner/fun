@@ -9,3 +9,4 @@ mod monotonic_tack;
 mod simulation;
 mod sliding_window;
 mod string;
+mod tree;
