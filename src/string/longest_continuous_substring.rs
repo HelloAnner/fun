@@ -1,4 +1,10 @@
-// https://leetcode.cn/problems/length-of-the-longest-alphabetical-continuous-substring/?envType=daily-question&envId=2024-09-19
+/**
+
+https://leetcode.cn/problems/length-of-the-longest-alphabetical-continuous-substring/?envType=daily-question&envId=2024-09-19
+
+一次遍历，维护一个答案
+
+ */
 
 #[allow(dead_code)]
 pub fn longest_continuous_substring(s: String) -> i32 {
