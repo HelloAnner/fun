@@ -9,6 +9,7 @@ https://leetcode.cn/problems/symmetric-tree/description/
  */
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn is_symmetric(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
         // 在【100. 相同的树】的基础上稍加改动
         fn is_same_tree(

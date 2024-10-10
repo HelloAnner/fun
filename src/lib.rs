@@ -8,5 +8,6 @@ mod math;
 mod monotonic_tack;
 mod simulation;
 mod sliding_window;
+mod stack;
 mod string;
 mod tree;
