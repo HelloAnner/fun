@@ -16,6 +16,7 @@ https://leetcode.cn/problems/find-the-number-of-good-pairs-i/description/?envTyp
 
  */
 impl Solution {
+    #[allow(dead_code)]
     pub fn number_of_pairs(nums1: Vec<i32>, nums2: Vec<i32>, k: i32) -> i32 {
         let mut res = 0;
         for &a in &nums1 {
