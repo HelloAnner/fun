@@ -1,5 +1,6 @@
 mod can_complete_circuit;
 mod can_jump;
+mod find_content_children;
 mod maximum_binary_string;
 mod maximum_subsequence_count;
 mod number_of_weeks;
