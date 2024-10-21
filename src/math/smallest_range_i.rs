@@ -6,7 +6,7 @@ use super::Solution;
 
 nums 的 分数 是 nums 中最大和最小元素的差值。
 
-在对  nums 中的每个索引最多应用一次上述操作后，返回 nums 的最低 分数 。
+在对  nums 中的每个索引最多应用一次上述操作后，返回 nums 的最低分数 。
 
 
 示例 1：
@@ -23,6 +23,7 @@ impl Solution {
     pub fn smallest_range_i(nums: Vec<i32>, k: i32) -> i32 {
         let mx = nums.iter().max().unwrap();
         let mn = nums.iter().min().unwrap();
+        // k 是一个范围， 所以可能出现负数，那么最低分数就是0
         return (mx - mn - 2 * k).max(0);
     }
 }
