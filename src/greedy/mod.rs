@@ -3,6 +3,7 @@ mod can_jump;
 mod distribute_candies;
 mod find_content_children;
 mod max_profit;
+mod max_profit_ii;
 mod maximum_binary_string;
 mod maximum_subsequence_count;
 mod number_of_weeks;
