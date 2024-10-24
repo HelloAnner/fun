@@ -13,7 +13,7 @@ https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/description/
  */
 impl Solution {
     #[allow(dead_code)]
-    pub fn max_profit(prices: Vec<i32>) -> i32 {
+    pub fn max_profit_ii(prices: Vec<i32>) -> i32 {
         let mut ans = 0;
         let n = prices.len();
         for i in 1..n {
