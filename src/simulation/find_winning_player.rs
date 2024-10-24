@@ -18,6 +18,7 @@ use crate::simulation::Solution;
 https://leetcode.cn/problems/find-the-first-player-to-win-k-games-in-a-row/description/?envType=daily-question&envId=2024-10-24
 */
 impl Solution {
+    #[allow(dead_code)]
     pub fn find_winning_player(skills: Vec<i32>, k: i32) -> i32 {
         let mut max_i = 0;
         let mut win = 0;
