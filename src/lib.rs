@@ -28,3 +28,5 @@ mod string;
 mod tree;
 // 双指针
 mod two_pointer;
+// 并查集
+mod union_find;
