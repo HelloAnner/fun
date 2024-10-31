@@ -1,0 +1,3 @@
+mod combine;
+
+struct Solution;
