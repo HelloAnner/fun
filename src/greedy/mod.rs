@@ -2,6 +2,7 @@ mod can_complete_circuit;
 mod can_jump;
 mod distribute_candies;
 mod find_content_children;
+mod get_smallest_string;
 mod jump;
 mod max_profit;
 mod max_profit_ii;
