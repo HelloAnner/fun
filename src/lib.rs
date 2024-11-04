@@ -36,3 +36,5 @@ mod backtracking;
 mod bit_operations;
 // 排序
 mod sort;
+// 分治
+mod divide_conquer;
