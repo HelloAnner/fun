@@ -1,3 +1,4 @@
+mod sort_list;
 mod sorted_array_to_bst;
 
 use std::cell::RefCell;
