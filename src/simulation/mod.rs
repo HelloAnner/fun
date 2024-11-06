@@ -9,6 +9,7 @@ mod max_score_sightseeing_pair;
 mod min_operations;
 mod minimum_average;
 mod number_of_pairs;
+mod results_array;
 mod time_required_to_buy;
 
 struct Solution;
