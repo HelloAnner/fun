@@ -14,3 +14,16 @@ mod results_array;
 mod time_required_to_buy;
 
 struct Solution;
+
+#[derive(PartialEq, Eq, Clone, Debug)]
+struct ListNode {
+    pub val: i32,
+    pub next: Option<Box<ListNode>>,
+}
+
+impl ListNode {
+    #[inline]
+    fn new(val: i32) -> Self {
+        ListNode { next: None, val }
+    }
+}
