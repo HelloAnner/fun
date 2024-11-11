@@ -1,5 +1,4 @@
-use crate::divide_conquer::Solution;
-use crate::recursion::ListNode;
+use crate::divide_conquer::{ListNode, Solution};
 
 /*
 给你链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。
