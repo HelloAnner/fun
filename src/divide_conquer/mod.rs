@@ -23,6 +23,7 @@ impl TreeNode {
     }
 }
 
+// Definition for singly-linked list.
 #[derive(PartialEq, Eq, Clone, Debug)]
 struct ListNode {
     pub val: i32,
