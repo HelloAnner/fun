@@ -1,4 +1,5 @@
 mod add_two_numbers;
+mod count_good_nodes;
 mod gray_code;
 mod merge_two_lists;
 
