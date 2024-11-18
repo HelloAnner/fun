@@ -2,6 +2,7 @@ mod cal_points;
 mod check_record;
 mod difference_of_sum;
 mod find_winning_player;
+mod image_smoother;
 mod judge_square_sum;
 mod losing_player;
 mod max_height_of_triangle;
