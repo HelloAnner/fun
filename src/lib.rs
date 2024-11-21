@@ -39,4 +39,5 @@ mod sort;
 // 分治
 mod divide_conquer;
 // 全排列
+mod bfs;
 mod full_permutation;

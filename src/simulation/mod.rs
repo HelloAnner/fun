@@ -1,6 +1,8 @@
+mod asas;
 mod cal_points;
 mod check_record;
 mod difference_of_sum;
+mod final_position_of_snake;
 mod find_winning_player;
 mod image_smoother;
 mod judge_square_sum;
