@@ -1,4 +1,3 @@
-mod asas;
 mod cal_points;
 mod check_record;
 mod difference_of_sum;
