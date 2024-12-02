@@ -7,5 +7,6 @@ mod permute;
 mod shopping_offers;
 mod subsets;
 mod subsets_with_dup;
+mod total_n_queens;
 
 struct Solution;
