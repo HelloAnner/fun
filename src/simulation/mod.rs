@@ -14,6 +14,7 @@ mod neigh_bor_sum;
 mod number_of_alternating_groups;
 mod number_of_pairs;
 mod results_array;
+mod square_is_white;
 mod time_required_to_buy;
 
 struct Solution;
