@@ -1,0 +1,25 @@
+{
+  "name": "algorithms-typescript",
+  "version": "1.0.0",
+  "description": "TypeScript implementation of algorithms",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node ts-src/index.ts",
+    "demo": "ts-node ts-src/demo.ts",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "clean": "rm -rf dist"
+  },
+  "keywords": ["algorithms", "typescript", "data-structures"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20.0.0",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  }
+}
