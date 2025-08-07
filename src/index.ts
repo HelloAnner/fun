@@ -2,7 +2,7 @@
 // 算法实现的TypeScript版本
 
 export * from './data-structures';
-export * from './algorithms';
+export * from './leetcode';
 
 // 主入口文件
 if (typeof window === 'undefined') {

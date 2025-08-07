@@ -10,3 +10,6 @@ export * from './binary-search';
 export * from './sorting';
 export * from './string';
 export * from './simulation';
+export * from './linked-list';
+export * from './sliding-window';
+export * from './bit-manipulation';

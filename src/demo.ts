@@ -9,53 +9,53 @@ import {
     evalRPN, 
     MinStack, 
     isValid 
-} from './algorithms/stack';
+} from './leetcode/stack';
 import { 
     twoSum, 
     relocateMarbles, 
     isHappy 
-} from './algorithms/hash';
+} from './leetcode/hash';
 import { 
     sortedSquares, 
     isPalindrome, 
     merge 
-} from './algorithms/two-pointers';
+} from './leetcode/two-pointers';
 import { 
     isSymmetric, 
     maxDepth, 
     levelOrder 
-} from './algorithms/tree';
+} from './leetcode/tree';
 import { 
     cloneGraph, 
     openLock 
-} from './algorithms/graph';
+} from './leetcode/graph';
 import { 
     climbStairs, 
     coinChange, 
     rob 
-} from './algorithms/dynamic-programming';
+} from './leetcode/dynamic-programming';
 import { 
     canJump, 
     maxProfit 
-} from './algorithms/greedy';
+} from './leetcode/greedy';
 import { 
     search, 
     mySqrt 
-} from './algorithms/binary-search';
+} from './leetcode/binary-search';
 import { 
     quickSort, 
     mergeSort 
-} from './algorithms/sorting';
+} from './leetcode/sorting';
 import { 
     strStr, 
     convert, 
     isAnagram 
-} from './algorithms/string';
+} from './leetcode/string';
 import { 
     isValidSudoku, 
     spiralOrder, 
     pivotIndex 
-} from './algorithms/simulation';
+} from './leetcode/simulation';
 
 console.log('🚀 TypeScript 算法演示开始\n');
 
