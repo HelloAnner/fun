@@ -11,7 +11,7 @@ class BlloomFilter {
     // 数组的长度是 size / 8，因为每个元素可以存 8 个位（0 或 1）
     private bitArray: Uint8Array;
 
-    
+
     /**
    * 构造一个高效的布隆过滤器
    * @param estimatedItemCount 预估要存储的元素数量 (n)
@@ -25,6 +25,10 @@ class BlloomFilter {
         this.bitArray = new Uint8Array(byteArraySize);
     }
 
+    /**
+   * 向布隆过滤器中添加一个元素
+   * @param item 要添加的元素
+   */
     public add(item: string): void {
         const hashes = this.getHashes(item);
         for (const hash of hashes) {
@@ -35,6 +39,11 @@ class BlloomFilter {
         }
     }
 
+    /**
+   * 检查布隆过滤器是否可能包含该元素
+   * @param item 要检查的元素
+   * @returns 如果可能包含，则返回 true；否则返回 false
+   */
     public mightContain(item: string): boolean {
         const hashes = this.getHashes(item);
         for (const hash of hashes) {
