@@ -1,7 +1,6 @@
 package algorithms
 
 import (
-	"fmt"
 	"math"
 	"sort"
 	"strings"
@@ -186,28 +185,26 @@ func justifyLine(words []string, maxWidth int, isLastLine bool) string {
 	return result.String()
 }
 
-// DemonstrateCandyAlgorithm 演示分发糖果算法
-func DemonstrateCandyAlgorithm() {
-	fmt.Println("=== 贪心算法 - 分发糖果 ===")
-	
-	ratings := []int{1, 0, 2}
-	result := Candy(ratings)
-	fmt.Printf("评分: %v\n", ratings)
-	fmt.Printf("最少糖果数: %d\n", result)
-	
-	ratings2 := []int{1, 2, 2}
-	result2 := Candy(ratings2)
-	fmt.Printf("评分: %v\n", ratings2)
-	fmt.Printf("最少糖果数: %d\n", result2)
-	
-	// 跳跃游戏演示
-	nums := []int{2, 3, 1, 1, 4}
-	canJump := CanJump(nums)
-	fmt.Printf("数组: %v, 能否跳到最后: %t\n", nums, canJump)
-	
-	// 买卖股票演示
-	prices := []int{7, 1, 5, 3, 6, 4}
-	profit := MaxProfit(prices)
-	fmt.Printf("股票价格: %v, 最大利润: %d\n", prices, profit)
-	fmt.Println()
+/**
+ * 665. 非递减数列
+ * https://leetcode.cn/problems/non-decreasing-array/description/
+ */
+func checkPossibility(nums []int) bool {
+	count := 0
+	for i := 0; i < len(nums)-1; i++ {
+		if nums[i] > nums[i+1] {
+			count++
+			if count > 1 {
+				return false
+			}
+			if i > 0 && nums[i+1] < nums[i-1] {
+				// [3, 4, 2], i=1, nums[0]=3, nums[2]=2. 3 > 2，不能把4改成2，只能把2改成4.
+				nums[i+1] = nums[i]
+			} else {
+				// [2, 4, 3] -> [2, 3, 3]
+				nums[i] = nums[i+1]
+			}
+		}
+	}
+	return true
 }

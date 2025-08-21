@@ -35,7 +35,7 @@ func RelocateMarbles(nums []int, moveFrom []int, moveTo []int) []int {
 
 /**
  * 1. 两数之和
- * Two Sum
+ * https://leetcode.cn/problems/two-sum/description/
  */
 func TwoSum(nums []int, target int) []int {
 	numMap := make(map[int]int)
@@ -53,7 +53,7 @@ func TwoSum(nums []int, target int) []int {
 
 /**
  * 202. 快乐数
- * Happy Number
+ * Happy Number  https://leetcode.cn/problems/happy-number/description/
  */
 func IsHappy(n int) bool {
 	seen := make(map[int]bool)
