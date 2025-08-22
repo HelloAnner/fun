@@ -1,6 +1,7 @@
 package algorithms
 
 import (
+	"math"
 	"sort"
 )
 
@@ -220,4 +221,25 @@ func DistributeCandies(candies, numPeople int) []int {
 	}
 
 	return result
+}
+
+/**
+ * 3195 找到所有 Ones 的最小矩形面积 I
+ * https://leetcode.cn/problems/find-the-minimum-area-to-cover-all-ones-i/?envType=daily-question&envId=2025-08-22
+ */
+func minimumArea(grid [][]int) int {
+	// 寻找四个方向的边界位置
+	left, right := math.MaxInt, 0
+	top, bottom := math.MaxInt, 0
+	for i, row := range grid {
+		for j, x := range row {
+			if x == 1 {
+				left = min(left, j)
+				right = max(right, j)
+				top = min(top, i)
+				bottom = max(bottom, i)
+			}
+		}
+	}
+	return (right - left + 1) * (bottom - top + 1)
 }

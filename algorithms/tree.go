@@ -4,6 +4,8 @@ import (
 	"algorithms-go/data_structures"
 )
 
+type TreeNode = data_structures.TreeNode
+
 /**
  * 树相关算法实现
  * Tree related algorithms
@@ -164,4 +166,30 @@ func LowestCommonAncestor(root, p, q *data_structures.TreeNode) *data_structures
 		return left
 	}
 	return right
+}
+
+/**
+ * 查找二叉树最深的一个节点
+ */
+func findDeepestNode(root *TreeNode) *TreeNode {
+	if root == nil {
+		return nil
+	}
+	var deepestNode *TreeNode
+	maxDepth := -1
+
+	var dfs func(node *TreeNode, depth int)
+	dfs = func(node *TreeNode, depth int) {
+		if node == nil {
+			return
+		}
+		if depth > maxDepth {
+			maxDepth = depth
+			deepestNode = node
+		}
+		dfs(node.Left, depth+1)
+		dfs(node.Right, depth+1)
+	}
+	dfs(root, 0)
+	return deepestNode
 }
