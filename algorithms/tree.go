@@ -51,15 +51,15 @@ func MaxDepth(root *data_structures.TreeNode) int {
  * 226. 翻转二叉树
  * Invert Binary Tree
  */
-func InvertTree(root *data_structures.TreeNode) *data_structures.TreeNode {
+func invertTree(root *TreeNode) *TreeNode {
 	if root == nil {
 		return nil
 	}
 
 	root.Left, root.Right = root.Right, root.Left
 
-	InvertTree(root.Left)
-	InvertTree(root.Right)
+	invertTree(root.Left)
+	invertTree(root.Right)
 
 	return root
 }

@@ -243,3 +243,25 @@ func minimumArea(grid [][]int) int {
 	}
 	return (right - left + 1) * (bottom - top + 1)
 }
+
+// 498. 对角线遍历
+// 给你一个大小为 m x n 的矩阵 mat ，请以对角线遍历的顺序，用一个数组返回这个矩阵中的所有元素。
+// https://leetcode.cn/problems/diagonal-traverse/description/?envType=daily-question&envId=2025-08-25
+func findDiagonalOrder(mat [][]int) []int {
+	m, n := len(mat), len(mat[0])
+	ans := make([]int, 0, m*n) // 预分配空间
+	for k := range m + n - 1 {
+		minJ := max(k-m+1, 0)
+		maxJ := min(k, n-1)
+		if k%2 == 0 { // 偶数从左到右
+			for j := minJ; j <= maxJ; j++ {
+				ans = append(ans, mat[k-j][j])
+			}
+		} else { // 奇数从右到左
+			for j := maxJ; j >= minJ; j-- {
+				ans = append(ans, mat[k-j][j])
+			}
+		}
+	}
+	return ans
+}
