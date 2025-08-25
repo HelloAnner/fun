@@ -1,10 +1,10 @@
 package algorithms
 
 import (
+	"algorithms-go/data_structures"
 	"sort"
 	"strconv"
 	"strings"
-	"algorithms-go/data_structures"
 )
 
 // CombinationSum 组合总和
@@ -12,9 +12,9 @@ import (
 func CombinationSum(candidates []int, target int) [][]int {
 	var result [][]int
 	var path []int
-	
+
 	sort.Ints(candidates) // 排序以便剪枝
-	
+
 	var dfs func(begin int, target int)
 	dfs = func(begin int, target int) {
 		if target == 0 {
@@ -24,18 +24,18 @@ func CombinationSum(candidates []int, target int) [][]int {
 			result = append(result, combination)
 			return
 		}
-		
+
 		for i := begin; i < len(candidates); i++ {
 			if target-candidates[i] < 0 {
 				break // 剪枝：后面的数字更大，不可能满足条件
 			}
-			
+
 			path = append(path, candidates[i])
 			dfs(i, target-candidates[i]) // 可以重复使用同一个数字
 			path = path[:len(path)-1]    // 回溯
 		}
 	}
-	
+
 	dfs(0, target)
 	return result
 }
@@ -45,7 +45,7 @@ func CombinationSum(candidates []int, target int) [][]int {
 func CombinationSumIII(k int, n int) [][]int {
 	var result [][]int
 	var path []int
-	
+
 	var dfs func(start int, remaining int, count int)
 	dfs = func(start int, remaining int, count int) {
 		if count == k {
@@ -56,18 +56,18 @@ func CombinationSumIII(k int, n int) [][]int {
 			}
 			return
 		}
-		
+
 		for i := start; i <= 9; i++ {
 			if remaining-i < 0 {
 				break // 剪枝
 			}
-			
+
 			path = append(path, i)
 			dfs(i+1, remaining-i, count+1)
 			path = path[:len(path)-1] // 回溯
 		}
 	}
-	
+
 	dfs(1, n, 0)
 	return result
 }
@@ -78,18 +78,18 @@ func BinaryTreePaths(root *data_structures.TreeNode) []string {
 	if root == nil {
 		return []string{}
 	}
-	
+
 	var result []string
 	var path []string
-	
+
 	var dfs func(node *data_structures.TreeNode)
 	dfs = func(node *data_structures.TreeNode) {
 		if node == nil {
 			return
 		}
-		
+
 		path = append(path, strconv.Itoa(node.Val))
-		
+
 		// 如果是叶子节点，添加路径到结果
 		if node.Left == nil && node.Right == nil {
 			result = append(result, strings.Join(path, "->"))
@@ -98,11 +98,11 @@ func BinaryTreePaths(root *data_structures.TreeNode) []string {
 			dfs(node.Left)
 			dfs(node.Right)
 		}
-		
+
 		// 回溯
 		path = path[:len(path)-1]
 	}
-	
+
 	dfs(root)
 	return result
 }
@@ -113,11 +113,11 @@ func AllPathsSourceTarget(graph [][]int) [][]int {
 	var result [][]int
 	var path []int
 	target := len(graph) - 1
-	
+
 	var dfs func(node int)
 	dfs = func(node int) {
 		path = append(path, node)
-		
+
 		if node == target {
 			// 到达目标节点，添加路径到结果
 			pathCopy := make([]int, len(path))
@@ -129,11 +129,11 @@ func AllPathsSourceTarget(graph [][]int) [][]int {
 				dfs(neighbor)
 			}
 		}
-		
+
 		// 回溯
 		path = path[:len(path)-1]
 	}
-	
+
 	dfs(0)
 	return result
 }
@@ -144,7 +144,7 @@ func IsShiftString(A, B string) bool {
 	if len(A) != len(B) {
 		return false
 	}
-	
+
 	doubleA := A + A
 	return strings.Contains(doubleA, B)
 }
@@ -155,7 +155,7 @@ func Permute(nums []int) [][]int {
 	var result [][]int
 	var path []int
 	used := make([]bool, len(nums))
-	
+
 	var dfs func()
 	dfs = func() {
 		if len(path) == len(nums) {
@@ -164,12 +164,12 @@ func Permute(nums []int) [][]int {
 			result = append(result, permutation)
 			return
 		}
-		
+
 		for i := 0; i < len(nums); i++ {
 			if used[i] {
 				continue
 			}
-			
+
 			path = append(path, nums[i])
 			used[i] = true
 			dfs()
@@ -177,7 +177,7 @@ func Permute(nums []int) [][]int {
 			path = path[:len(path)-1]
 		}
 	}
-	
+
 	dfs()
 	return result
 }
@@ -187,21 +187,21 @@ func Permute(nums []int) [][]int {
 func Subsets(nums []int) [][]int {
 	var result [][]int
 	var path []int
-	
+
 	var dfs func(start int)
 	dfs = func(start int) {
 		// 当前路径就是一个子集
 		subset := make([]int, len(path))
 		copy(subset, path)
 		result = append(result, subset)
-		
+
 		for i := start; i < len(nums); i++ {
 			path = append(path, nums[i])
 			dfs(i + 1)
 			path = path[:len(path)-1]
 		}
 	}
-	
+
 	dfs(0)
 	return result
 }
@@ -212,7 +212,7 @@ func LetterCombinations(digits string) []string {
 	if len(digits) == 0 {
 		return []string{}
 	}
-	
+
 	phoneMap := map[byte]string{
 		'2': "abc",
 		'3': "def",
@@ -223,17 +223,17 @@ func LetterCombinations(digits string) []string {
 		'8': "tuv",
 		'9': "wxyz",
 	}
-	
+
 	var result []string
 	var path []byte
-	
+
 	var dfs func(index int)
 	dfs = func(index int) {
 		if index == len(digits) {
 			result = append(result, string(path))
 			return
 		}
-		
+
 		letters := phoneMap[digits[index]]
 		for i := 0; i < len(letters); i++ {
 			path = append(path, letters[i])
@@ -241,7 +241,7 @@ func LetterCombinations(digits string) []string {
 			path = path[:len(path)-1]
 		}
 	}
-	
+
 	dfs(0)
 	return result
 }

@@ -15,7 +15,7 @@ func MinimumLevels(possible []int) int {
 		}
 	}
 	s -= 2 // 减去最后一个元素，因为Alice不能完成所有关卡
-	
+
 	pre := 0
 	for i := 0; i < n-1; i++ {
 		if possible[i] == 1 {
@@ -41,7 +41,7 @@ func IsArraySpecial(nums []int, queries [][]int) []bool {
 			prefixSum[i]++
 		}
 	}
-	
+
 	result := make([]bool, len(queries))
 	for i, query := range queries {
 		from, to := query[0], query[1]
@@ -56,10 +56,10 @@ func SummaryRanges(nums []int) []string {
 	if len(nums) == 0 {
 		return []string{}
 	}
-	
+
 	var result []string
 	start := 0
-	
+
 	for i := 1; i <= len(nums); i++ {
 		// 如果到达末尾或者当前数字不连续
 		if i == len(nums) || nums[i] != nums[i-1]+1 {
@@ -73,7 +73,7 @@ func SummaryRanges(nums []int) []string {
 			start = i
 		}
 	}
-	
+
 	return result
 }
 
@@ -88,20 +88,20 @@ func formatRange(start, end int) string {
 // DemonstratePrefixSumAlgorithms 演示前缀和算法
 func DemonstratePrefixSumAlgorithms() {
 	fmt.Println("=== 前缀和算法演示 ===")
-	
+
 	// 最少关卡数目
 	alice := []int{1, 1, 0, 1}
 	minLevels := MinimumLevels(alice)
 	fmt.Printf("Alice: %v\n", alice)
 	fmt.Printf("Alice需要完成的最少关卡数: %d\n", minLevels)
-	
+
 	// 特殊数组
 	nums := []int{3, 4, 1, 2, 6}
 	queries := [][]int{{0, 4}}
 	results := IsArraySpecial(nums, queries)
 	fmt.Printf("数组: %v, 查询: %v\n", nums, queries)
 	fmt.Printf("特殊数组查询结果: %v\n", results)
-	
+
 	// 汇总区间
 	nums2 := []int{0, 1, 2, 4, 5, 7}
 	ranges := SummaryRanges(nums2)

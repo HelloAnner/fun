@@ -38,16 +38,16 @@ func (rs *RandomizedSet) Remove(val int) bool {
 	if !exists {
 		return false
 	}
-	
+
 	// 将最后一个元素移到要删除的位置
 	lastElement := rs.nums[len(rs.nums)-1]
 	rs.nums[idx] = lastElement
 	rs.indices[lastElement] = idx
-	
+
 	// 删除最后一个元素
 	rs.nums = rs.nums[:len(rs.nums)-1]
 	delete(rs.indices, val)
-	
+
 	return true
 }
 
@@ -118,7 +118,7 @@ func (hs *MyHashSet) Contains(key int) bool {
 // DemonstrateDesignAlgorithms 演示设计算法
 func DemonstrateDesignAlgorithms() {
 	fmt.Println("=== 设计算法演示 ===")
-	
+
 	// RandomizedSet 演示
 	fmt.Println("RandomizedSet 演示:")
 	rs := NewRandomizedSet()
@@ -129,7 +129,7 @@ func DemonstrateDesignAlgorithms() {
 	fmt.Printf("删除 1: %t\n", rs.Remove(1))
 	fmt.Printf("插入 2: %t\n", rs.Insert(2))
 	fmt.Printf("获取随机元素: %d\n", rs.GetRandom())
-	
+
 	// MyHashSet 演示
 	fmt.Println("\nMyHashSet 演示:")
 	hs := NewMyHashSet()
@@ -141,7 +141,7 @@ func DemonstrateDesignAlgorithms() {
 	fmt.Printf("包含 2: %t\n", hs.Contains(2))
 	hs.Remove(2)
 	fmt.Printf("删除后包含 2: %t\n", hs.Contains(2))
-	
+
 	// IsValidNumber 演示
 	fmt.Println("\n数字验证演示:")
 	testNumbers := []string{"0", "e", ".", "2e10", "-90e3", "1e", "e3", "6e-1", "99e2.5", "53.5e93", "--6", "-+3", "95a54e53"}
@@ -164,17 +164,17 @@ func IsValidNumber(s string) bool {
 	for start <= end && s[end] == ' ' {
 		end--
 	}
-	
+
 	if start > end {
 		return false
 	}
-	
+
 	s = s[start : end+1]
-	
+
 	seenDigit := false
 	seenDot := false
 	seenE := false
-	
+
 	for i, char := range s {
 		if char >= '0' && char <= '9' {
 			seenDigit = true
@@ -198,6 +198,6 @@ func IsValidNumber(s string) bool {
 			return false
 		}
 	}
-	
+
 	return seenDigit
 }

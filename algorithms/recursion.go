@@ -84,20 +84,20 @@ func Power(base, exp int) int {
 // DemonstrateRecursionAlgorithms 演示递归算法
 func DemonstrateRecursionAlgorithms() {
 	fmt.Println("=== 递归算法演示 ===")
-	
+
 	// 汉诺塔问题
 	fmt.Println("汉诺塔问题 (3个圆盘):")
 	TowerOfHanoi(3, 1, 2, 3)
 	fmt.Println()
-	
+
 	// 阶乘
 	n := 5
 	fmt.Printf("阶乘 %d! = %d\n", n, Factorial(n))
-	
+
 	// 斐波那契数列
 	fmt.Printf("斐波那契数列 F(%d) = %d\n", 10, Fibonacci(10))
 	fmt.Printf("斐波那契数列 (记忆化) F(%d) = %d\n", 10, FibonacciMemo(10))
-	
+
 	// 幂运算
 	fmt.Printf("幂运算 2^10 = %d\n", Power(2, 10))
 	fmt.Println()

@@ -118,10 +118,8 @@ func ReverseBetween(head *data_structures.ListNode, left, right int) *data_struc
 	return dummy.Next
 }
 
-/**
- * 138. 随机链表的复制
- * Copy List with Random Pointer
- */
+// 138. 随机链表的复制
+// Copy List with Random Pointer
 type RandomListNode struct {
 	Val    int
 	Next   *RandomListNode

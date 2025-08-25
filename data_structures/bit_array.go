@@ -14,7 +14,7 @@ func NewBitArray(size int) *BitArray {
 	if size <= 0 {
 		return nil
 	}
-	
+
 	// 每个 int32 可以存储 32 位
 	arraySize := (size + 31) / 32
 	return &BitArray{
@@ -31,17 +31,17 @@ func (ba *BitArray) Set(i int, val int) error {
 	if val != 0 && val != 1 {
 		return errors.New("value must be either 0 or 1")
 	}
-	
+
 	idx := i / 32
 	bitOffset := i % 32
 	mask := int32(1 << bitOffset)
-	
+
 	if val == 1 {
 		ba.array[idx] |= mask
 	} else {
 		ba.array[idx] &= ^mask
 	}
-	
+
 	return nil
 }
 
@@ -50,11 +50,11 @@ func (ba *BitArray) Get(i int) (int, error) {
 	if i < 0 || i >= ba.size {
 		return 0, errors.New("index out of range")
 	}
-	
+
 	idx := i / 32
 	bitOffset := i % 32
 	mask := int32(1 << bitOffset)
-	
+
 	if ba.array[idx]&mask != 0 {
 		return 1, nil
 	}

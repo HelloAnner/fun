@@ -8,7 +8,7 @@ func MajorityElement(nums []int) int {
 	// 创建副本进行排序
 	sorted := make([]int, len(nums))
 	copy(sorted, nums)
-	
+
 	// 简单排序
 	for i := 0; i < len(sorted); i++ {
 		for j := i + 1; j < len(sorted); j++ {
@@ -17,7 +17,7 @@ func MajorityElement(nums []int) int {
 			}
 		}
 	}
-	
+
 	return sorted[len(sorted)/2]
 }
 
@@ -27,7 +27,7 @@ func MajorityElementByCount(nums []int) int {
 	for _, num := range nums {
 		counts[num]++
 	}
-	
+
 	maxCount := 0
 	result := nums[0]
 	for num, count := range counts {
@@ -36,7 +36,7 @@ func MajorityElementByCount(nums []int) int {
 			result = num
 		}
 	}
-	
+
 	return result
 }
 
@@ -46,20 +46,20 @@ func RotateArray(nums []int, k int) []int {
 	if n == 0 {
 		return nums
 	}
-	
+
 	k = k % n // 处理 k 大于数组长度的情况
 	result := make([]int, n)
-	
+
 	// 将后 k 个元素移到前面
 	for i := 0; i < k; i++ {
 		result[i] = nums[n-k+i]
 	}
-	
+
 	// 将前 n-k 个元素移到后面
 	for i := 0; i < n-k; i++ {
 		result[k+i] = nums[i]
 	}
-	
+
 	return result
 }
 
@@ -69,16 +69,16 @@ func RotateArrayInPlace(nums []int, k int) {
 	if n == 0 {
 		return
 	}
-	
+
 	k = k % n
 	if k == 0 {
 		return
 	}
-	
+
 	// 使用三次反转的方法
-	reverse(nums, 0, n-1)     // 反转整个数组
-	reverse(nums, 0, k-1)     // 反转前 k 个元素
-	reverse(nums, k, n-1)     // 反转后 n-k 个元素
+	reverse(nums, 0, n-1) // 反转整个数组
+	reverse(nums, 0, k-1) // 反转前 k 个元素
+	reverse(nums, k, n-1) // 反转后 n-k 个元素
 }
 
 // reverse 反转数组的指定部分
@@ -93,19 +93,19 @@ func reverse(nums []int, start, end int) {
 // DemonstrateArrayAlgorithms 演示数组算法
 func DemonstrateArrayAlgorithms() {
 	fmt.Println("=== 数组算法演示 ===")
-	
+
 	// 多数元素
 	nums := []int{3, 2, 3}
 	majority := MajorityElement(nums)
 	fmt.Printf("数组: %v, 多数元素: %d\n", nums, majority)
-	
+
 	// 轮转数组
 	nums2 := []int{1, 2, 3, 4, 5, 6, 7}
 	k := 3
 	fmt.Printf("原数组: %v\n", nums2)
 	RotateArray(nums2, k)
 	fmt.Printf("轮转 %d 位后: %v\n", k, nums2)
-	
+
 	// 旋转矩阵
 	matrix := [][]int{
 		{1, 2, 3},
@@ -132,14 +132,14 @@ func RotateMatrix(matrix [][]int) {
 	if n == 0 {
 		return
 	}
-	
+
 	// 创建临时矩阵
 	tmp := make([][]int, n)
 	for i := range tmp {
 		tmp[i] = make([]int, n)
 		copy(tmp[i], matrix[i])
 	}
-	
+
 	// 根据旋转公式：matrix[j][n-1-i] = tmp[i][j]
 	for i := 0; i < n; i++ {
 		for j := 0; j < n; j++ {
@@ -154,14 +154,14 @@ func RotateMatrixInPlace(matrix [][]int) {
 	if n == 0 {
 		return
 	}
-	
+
 	// 先转置矩阵
 	for i := 0; i < n; i++ {
 		for j := i; j < n; j++ {
 			matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
 		}
 	}
-	
+
 	// 再水平翻转每一行
 	for i := 0; i < n; i++ {
 		for j := 0; j < n/2; j++ {

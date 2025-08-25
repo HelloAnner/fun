@@ -9,14 +9,14 @@ import (
 func NumberOfRightTriangles(grid [][]int) int64 {
 	n, m := len(grid), len(grid[0])
 	col := make([]int, m)
-	
+
 	// 统计每列的1的个数
 	for j := 0; j < m; j++ {
 		for i := 0; i < n; i++ {
 			col[j] += grid[i][j]
 		}
 	}
-	
+
 	var res int64
 	for i := 0; i < n; i++ {
 		// 统计当前行的1的个数
@@ -24,7 +24,7 @@ func NumberOfRightTriangles(grid [][]int) int64 {
 		for j := 0; j < m; j++ {
 			row += grid[i][j]
 		}
-		
+
 		// 枚举每个点作为直角顶点
 		for j := 0; j < m; j++ {
 			if grid[i][j] == 1 {
@@ -32,7 +32,7 @@ func NumberOfRightTriangles(grid [][]int) int64 {
 			}
 		}
 	}
-	
+
 	return res
 }
 
@@ -45,12 +45,12 @@ func MySqrtFloat(n float64) float64 {
 	if n == 0 {
 		return 0
 	}
-	
+
 	low, high := 0.0, n
 	if n < 1 {
 		high = 1
 	}
-	
+
 	for high-low > 1e-9 {
 		mid := (low + high) / 2
 		square := mid * mid
@@ -62,7 +62,7 @@ func MySqrtFloat(n float64) float64 {
 			high = mid
 		}
 	}
-	
+
 	return (low + high) / 2
 }
 
@@ -85,7 +85,7 @@ func FindMaximumPower(num, t int) int {
 func CountBeautifulPairs(nums []int) int {
 	count := 0
 	n := len(nums)
-	
+
 	for i := 0; i < n; i++ {
 		for j := i + 1; j < n; j++ {
 			// 获取第一个数的第一位数字
@@ -93,17 +93,17 @@ func CountBeautifulPairs(nums []int) int {
 			for first >= 10 {
 				first /= 10
 			}
-			
+
 			// 获取第二个数的最后一位数字
 			last := nums[j] % 10
-			
+
 			// 检查是否互质
 			if gcd(first, last) == 1 {
 				count++
 			}
 		}
 	}
-	
+
 	return count
 }
 
@@ -127,7 +127,7 @@ func DoubleModularExponentiation(base, exp1, exp2, mod int) int {
 func modularExponentiation(base, exp, mod int) int {
 	result := 1
 	base = base % mod
-	
+
 	for exp > 0 {
 		if exp%2 == 1 {
 			result = (result * base) % mod
@@ -135,7 +135,7 @@ func modularExponentiation(base, exp, mod int) int {
 		exp = exp >> 1
 		base = (base * base) % mod
 	}
-	
+
 	return result
 }
 
@@ -143,18 +143,18 @@ func modularExponentiation(base, exp, mod int) int {
 // 找出数组中质数的最大距离
 func MaxPrimeDistance(nums []int) int {
 	primes := make([]int, 0)
-	
+
 	// 找出所有质数的索引
 	for i, num := range nums {
 		if isPrime(num) {
 			primes = append(primes, i)
 		}
 	}
-	
+
 	if len(primes) < 2 {
 		return 0
 	}
-	
+
 	// 返回第一个和最后一个质数的距离
 	return primes[len(primes)-1] - primes[0]
 }
@@ -170,12 +170,12 @@ func isPrime(n int) bool {
 	if n%2 == 0 {
 		return false
 	}
-	
+
 	for i := 3; i*i <= n; i += 2 {
 		if n%i == 0 {
 			return false
 		}
 	}
-	
+
 	return true
 }

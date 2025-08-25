@@ -135,9 +135,9 @@ func NextGreaterElements(nums []int) []int {
 	for i := range ans {
 		ans[i] = -1
 	}
-	
+
 	stack := []int{}
-	
+
 	// 模拟循环数组，遍历两遍
 	for i := 2*n - 1; i >= 0; i-- {
 		x := nums[i%n]
@@ -151,7 +151,7 @@ func NextGreaterElements(nums []int) []int {
 		}
 		stack = append(stack, x)
 	}
-	
+
 	return ans
 }
 
@@ -163,7 +163,7 @@ func DailyTemperatures(temperatures []int) []int {
 	n := len(temperatures)
 	ans := make([]int, n)
 	stack := []int{} // 存储索引
-	
+
 	// 从右向左遍历
 	for i := n - 1; i >= 0; i-- {
 		t := temperatures[i]
@@ -177,7 +177,7 @@ func DailyTemperatures(temperatures []int) []int {
 		}
 		stack = append(stack, i)
 	}
-	
+
 	return ans
 }
 
@@ -189,7 +189,7 @@ func DailyTemperaturesLeftToRight(temperatures []int) []int {
 	n := len(temperatures)
 	ans := make([]int, n)
 	stack := []int{} // 存储索引
-	
+
 	for i, t := range temperatures {
 		// 当前温度比栈顶温度高时，可以为栈中的元素找到答案
 		for len(stack) > 0 && t > temperatures[stack[len(stack)-1]] {
@@ -199,25 +199,25 @@ func DailyTemperaturesLeftToRight(temperatures []int) []int {
 		}
 		stack = append(stack, i)
 	}
-	
+
 	return ans
 }
 
 // DemonstrateStackAlgorithms 演示栈算法
 func DemonstrateStackAlgorithms() {
 	fmt.Println("=== 栈算法演示 ===")
-	
+
 	// 逆波兰表达式求值
 	tokens := []string{"2", "1", "+", "3", "*"}
 	result := EvalRPN(tokens)
 	fmt.Printf("逆波兰表达式 %v = %d\n", tokens, result)
-	
+
 	// 下一个更大元素 II
 	nums := []int{1, 2, 1}
 	nextGreater := NextGreaterElements(nums)
 	fmt.Printf("数组: %v\n", nums)
 	fmt.Printf("下一个更大元素: %v\n", nextGreater)
-	
+
 	// 每日温度
 	temperatures := []int{73, 74, 75, 71, 69, 72, 76, 73}
 	days := DailyTemperatures(temperatures)

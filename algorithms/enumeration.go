@@ -7,7 +7,7 @@ package algorithms
 */
 
 func numSubmat(mat [][]int) (ans int) {
-    m, n := len(mat), len(mat[0])
+	m, n := len(mat), len(mat[0])
 	for top := 0; top < m; top++ { // 枚举上边界
 		a := make([]int, n)
 		for bottom := top; bottom < m; bottom++ { // 枚举下边界
