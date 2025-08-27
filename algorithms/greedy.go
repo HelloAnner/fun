@@ -6,15 +6,13 @@ import (
 	"strings"
 )
 
-/**
- * 贪心算法相关实现
- * Greedy algorithms
- */
+// 贪心算法相关实现
+// Greedy algorithms
 
-/**
- * 55. 跳跃游戏
- * Jump Game
- */
+// 55. 跳跃游戏
+// Jump Game
+// 判断是否能够从数组的第一个位置跳到最后一个位置
+// https://leetcode.cn/problems/jump-game/description/
 func CanJump(nums []int) bool {
 	maxReach := 0
 
@@ -30,10 +28,10 @@ func CanJump(nums []int) bool {
 	return true
 }
 
-/**
- * 45. 跳跃游戏 II
- * Jump Game II
- */
+// 45. 跳跃游戏 II
+// Jump Game II
+// 找到从数组第一个位置跳到最后一个位置的最小跳跃次数
+// https://leetcode.cn/problems/jump-game-ii/description/
 func Jump(nums []int) int {
 	jumps := 0
 	currentEnd := 0
@@ -53,10 +51,10 @@ func Jump(nums []int) int {
 	return jumps
 }
 
-/**
- * 121. 买卖股票的最佳时机
- * Best Time to Buy and Sell Stock
- */
+// 121. 买卖股票的最佳时机
+// Best Time to Buy and Sell Stock
+// 在股票价格数组中找到一次交易的最大利润
+// https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/description/
 func MaxProfit(prices []int) int {
 	minPrice := prices[0]
 	maxProfit := 0
@@ -72,10 +70,10 @@ func MaxProfit(prices []int) int {
 	return maxProfit
 }
 
-/**
- * 135. 分发糖果
- * Candy
- */
+// 135. 分发糖果
+// Candy
+// 根据孩子的评分分发糖果，满足相邻孩子评分高的糖果更多
+// https://leetcode.cn/problems/candy/description/
 func Candy(ratings []int) int {
 	n := len(ratings)
 	candies := make([]int, n)
@@ -107,10 +105,10 @@ func Candy(ratings []int) int {
 	return total
 }
 
-/**
- * 2740. 找出分区值
- * Find the Value of the Partition
- */
+// 2740. 找出分区值
+// Find the Value of the Partition
+// 将数组分成两个子数组，找到两个子数组之间最小差值的绝对值
+// https://leetcode.cn/problems/find-the-value-of-the-partition/description/
 func FindValueOfPartition(nums []int) int {
 	sort.Ints(nums)
 	minDiff := math.MaxInt32
@@ -125,10 +123,10 @@ func FindValueOfPartition(nums []int) int {
 	return minDiff
 }
 
-/**
- * 68. 文本左右对齐
- * Text Justification
- */
+// 68. 文本左右对齐
+// Text Justification
+// 将单词数组按照最大宽度进行文本左右对齐排版
+// https://leetcode.cn/problems/text-justification/description/
 func FullJustify(words []string, maxWidth int) []string {
 	result := []string{}
 	currentLine := []string{}
@@ -185,10 +183,10 @@ func justifyLine(words []string, maxWidth int, isLastLine bool) string {
 	return result.String()
 }
 
-/**
- * 665. 非递减数列
- * https://leetcode.cn/problems/non-decreasing-array/description/
- */
+// 665. 非递减数列
+// Non-decreasing Array
+// 判断是否最多修改一个元素就能使数组变成非递减数列
+// https://leetcode.cn/problems/non-decreasing-array/description/
 func checkPossibility(nums []int) bool {
 	count := 0
 	for i := 0; i < len(nums)-1; i++ {

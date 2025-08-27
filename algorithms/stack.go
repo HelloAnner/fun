@@ -5,15 +5,11 @@ import (
 	"strconv"
 )
 
-/**
- * 栈相关算法实现
- * Stack-related algorithms
- */
+// 栈相关算法实现
+// Stack-related algorithms
 
-/**
- * 150. 逆波兰表达式求值
- * Evaluate Reverse Polish Notation
- */
+// 150. 逆波兰表达式求值
+// Evaluate Reverse Polish Notation
 func EvalRPN(tokens []string) int {
 	stack := []int{}
 
@@ -49,10 +45,8 @@ func EvalRPN(tokens []string) int {
 	return stack[0]
 }
 
-/**
- * 最小栈实现
- * Min Stack implementation
- */
+// 最小栈实现
+// Min Stack implementation
 type MinStack struct {
 	stack    []int
 	minStack []int
@@ -97,10 +91,8 @@ func (ms *MinStack) GetMin() int {
 	return ms.minStack[len(ms.minStack)-1]
 }
 
-/**
- * 20. 有效的括号
- * Valid Parentheses
- */
+// 20. 有效的括号
+// Valid Parentheses
 func IsValid(s string) bool {
 	stack := []rune{}
 	mapping := map[rune]rune{
@@ -125,10 +117,8 @@ func IsValid(s string) bool {
 	return len(stack) == 0
 }
 
-/**
- * 503. 下一个更大元素 II
- * Next Greater Element II (循环数组)
- */
+// 503. 下一个更大元素 II
+// Next Greater Element II (循环数组)
 func NextGreaterElements(nums []int) []int {
 	n := len(nums)
 	ans := make([]int, n)
@@ -155,10 +145,8 @@ func NextGreaterElements(nums []int) []int {
 	return ans
 }
 
-/**
- * 739. 每日温度
- * Daily Temperatures
- */
+// 739. 每日温度
+// Daily Temperatures
 func DailyTemperatures(temperatures []int) []int {
 	n := len(temperatures)
 	ans := make([]int, n)
@@ -181,10 +169,8 @@ func DailyTemperatures(temperatures []int) []int {
 	return ans
 }
 
-/**
- * 739. 每日温度 (从左向右的实现)
- * Daily Temperatures (left to right approach)
- */
+// 739. 每日温度 (从左向右的实现)
+// Daily Temperatures (left to right approach)
 func DailyTemperaturesLeftToRight(temperatures []int) []int {
 	n := len(temperatures)
 	ans := make([]int, n)

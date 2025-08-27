@@ -6,10 +6,8 @@ import (
 	"time"
 )
 
-/**
- * 380. O(1) 时间插入、删除和获取随机元素
- * Insert Delete GetRandom O(1)
- */
+// 380. O(1) 时间插入、删除和获取随机元素
+// Insert Delete GetRandom O(1)
 type RandomizedSet struct {
 	nums    []int
 	indices map[int]int
@@ -58,10 +56,8 @@ func (rs *RandomizedSet) GetRandom() int {
 	return rs.nums[rs.rng.Intn(len(rs.nums))]
 }
 
-/**
- * 705. 设计哈希集合
- * Design HashSet
- */
+// 705. 设计哈希集合
+// Design HashSet
 type MyHashSet struct {
 	size int
 	data [][]int
@@ -151,10 +147,8 @@ func DemonstrateDesignAlgorithms() {
 	fmt.Println()
 }
 
-/**
- * 65. 有效数字
- * Valid Number
- */
+// 65. 有效数字
+// Valid Number
 func IsValidNumber(s string) bool {
 	// 去除首尾空格
 	start, end := 0, len(s)-1

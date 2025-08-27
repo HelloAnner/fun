@@ -5,15 +5,13 @@ import (
 	"strings"
 )
 
-/**
- * 字符串相关算法实现
- * String related algorithms
- */
+// 字符串相关算法实现
+// String related algorithms
 
-/**
- * 28. 找出字符串中第一个匹配项的下标
- * Find the Index of the First Occurrence in a String
- */
+// 28. 找出字符串中第一个匹配项的下标
+// Find the Index of the First Occurrence in a String
+// 在主字符串中找到子字符串第一次出现的位置索引
+// https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/description/
 func StrStr(haystack, needle string) int {
 	if len(needle) == 0 {
 		return 0
@@ -31,10 +29,10 @@ func StrStr(haystack, needle string) int {
 	return -1
 }
 
-/**
- * 6. Z 字形变换
- * Zigzag Conversion
- */
+// 6. Z 字形变换
+// Zigzag Conversion
+// 将字符串按Z字形排列在指定行数的矩阵中，然后逐行读取
+// https://leetcode.cn/problems/zigzag-conversion/description/
 func Convert(s string, numRows int) string {
 	if numRows == 1 {
 		return s
@@ -68,10 +66,10 @@ func min(a, b int) int {
 	return b
 }
 
-/**
- * 65. 有效数字
- * Valid Number
- */
+// 65. 有效数字
+// Valid Number
+// 判断给定的字符串是否为一个有效的数字（整数、小数或科学计数法）
+// https://leetcode.cn/problems/valid-number/description/
 func IsNumber(s string) bool {
 	s = strings.TrimSpace(s)
 	hasNum := false
@@ -104,10 +102,9 @@ func IsNumber(s string) bool {
 	return hasNum
 }
 
-/**
- * 字符串翻转检查
- * Check if string can be shifted to match another
- */
+// 字符串轮转匹配
+// String Rotation Match
+// 检查一个字符串是否可以通过轮转变成另一个字符串
 func CanShift(a, b string) bool {
 	if len(a) != len(b) {
 		return false
@@ -115,10 +112,9 @@ func CanShift(a, b string) bool {
 	return strings.Contains(a+a, b)
 }
 
-/**
- * 字符串倒序修改
- * Reverse string modification
- */
+// 字符串反转
+// Reverse String
+// 将字符串中的字符顺序倒转
 func ReverseStringModify(s string) string {
 	chars := []rune(s)
 	left := 0
@@ -133,10 +129,9 @@ func ReverseStringModify(s string) string {
 	return string(chars)
 }
 
-/**
- * 字母异位词分组
- * Group Anagrams
- */
+// 49. 字母异位词分组
+// Group Anagrams
+// 将字符串数组中的字母异位词分组在一起
 func GroupAnagrams(strs []string) [][]string {
 	groups := make(map[string][]string)
 
@@ -158,10 +153,10 @@ func GroupAnagrams(strs []string) [][]string {
 	return result
 }
 
-/**
- * 205. 同构字符串
- * Isomorphic Strings
- */
+// 205. 同构字符串
+// Isomorphic Strings
+// 判断两个字符串是否同构（字符一对一映射）
+// https://leetcode.cn/problems/isomorphic-strings/description/
 func IsIsomorphic(s, t string) bool {
 	if len(s) != len(t) {
 		return false
@@ -197,10 +192,10 @@ func IsIsomorphic(s, t string) bool {
 	return true
 }
 
-/**
- * 242. 有效的字母异位词
- * Valid Anagram
- */
+// 242. 有效的字母异位词
+// Valid Anagram
+// 判断两个字符串是否为字母异位词（包含相同字母但顺序不同）
+// https://leetcode.cn/problems/valid-anagram/description/
 func IsAnagram(s, t string) bool {
 	if len(s) != len(t) {
 		return false
@@ -225,10 +220,10 @@ func IsAnagram(s, t string) bool {
 	return len(count) == 0
 }
 
-/**
- * 290. 单词规律
- * Word Pattern
- */
+// 290. 单词规律
+// Word Pattern
+// 检查字符模式和单词串之间是否存在双射关系
+// https://leetcode.cn/problems/word-pattern/description/
 func WordPattern(pattern, s string) bool {
 	words := strings.Split(s, " ")
 	if len(pattern) != len(words) {

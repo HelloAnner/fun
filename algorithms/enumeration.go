@@ -1,10 +1,7 @@
 package algorithms
 
-/**
- *  Leetcode 1504 统计全 1 子矩形
- *  给你一个 m x n 的二进制矩阵 mat ，请你返回有多少个 子矩形 的元素全部都是 1 。
-	https://leetcode.cn/problems/count-submatrices-with-all-ones/description/?envType=daily-question&envId=2025-08-21
-*/
+// Leetcode 1504 统计全 1 子矩形
+// 给你一个 m x n 的二进制矩阵 mat ，请你返回有多少个 子矩形 的元素全部都是 1 。
 
 func numSubmat(mat [][]int) (ans int) {
 	m, n := len(mat), len(mat[0])

@@ -2,15 +2,13 @@ package algorithms
 
 import "math"
 
-/**
- * 滑动窗口相关算法实现
- * Sliding Window related algorithms
- */
+// 滑动窗口相关算法实现
+// Sliding Window related algorithms
 
-/**
- * 3. 无重复字符的最长子串
- * Longest Substring Without Repeating Characters
- */
+// 3. 无重复字符的最长子串
+// Longest Substring Without Repeating Characters
+// 找到字符串中不包含重复字符的最长子串的长度
+// https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/
 func LengthOfLongestSubstring(s string) int {
 	charSet := make(map[byte]bool)
 	left := 0
@@ -30,10 +28,10 @@ func LengthOfLongestSubstring(s string) int {
 	return maxLength
 }
 
-/**
- * 76. 最小覆盖子串
- * Minimum Window Substring
- */
+// 76. 最小覆盖子串
+// Minimum Window Substring
+// 在字符串s中找到包含字符串t所有字符的最小子串
+// https://leetcode.cn/problems/minimum-window-substring/description/
 func MinWindow(s, t string) string {
 	if len(s) < len(t) {
 		return ""
@@ -87,10 +85,10 @@ func MinWindow(s, t string) string {
 	return s[start : start+length]
 }
 
-/**
- * 209. 长度最小的子数组
- * Minimum Size Subarray Sum
- */
+// 209. 长度最小的子数组
+// Minimum Size Subarray Sum
+// 找到和大于等于目标值的最短连续子数组的长度
+// https://leetcode.cn/problems/minimum-size-subarray-sum/description/
 func MinSubArrayLen(target int, nums []int) int {
 	left := 0
 	sum := 0
@@ -114,10 +112,10 @@ func MinSubArrayLen(target int, nums []int) int {
 	return minLen
 }
 
-/**
- * 219. 存在重复元素 II
- * Contains Duplicate II
- */
+// 219. 存在重复元素 II
+// Contains Duplicate II
+// 判断数组中是否存在两个不同的索引i和j，使得nums[i] = nums[j]且|i - j| <= k
+// https://leetcode.cn/problems/contains-duplicate-ii/description/
 func ContainsNearbyDuplicate(nums []int, k int) bool {
 	numMap := make(map[int]int)
 
@@ -131,10 +129,10 @@ func ContainsNearbyDuplicate(nums []int, k int) bool {
 	return false
 }
 
-/**
- * 438. 找到字符串中所有字母异位词
- * Find All Anagrams in a String
- */
+// 438. 找到字符串中所有字母异位词
+// Find All Anagrams in a String
+// 找到字符串s中所有p的字母异位词的起始索引
+// https://leetcode.cn/problems/find-all-anagrams-in-a-string/description/
 func FindAnagrams(s, p string) []int {
 	result := []int{}
 	if len(s) < len(p) {
@@ -183,10 +181,10 @@ func FindAnagrams(s, p string) []int {
 	return result
 }
 
-/**
- * 1052. 爱生气的书店老板
- * Grumpy Bookstore Owner
- */
+// 1052. 爱生气的书店老板
+// Grumpy Bookstore Owner
+// 书店老板在连续minutes分钟内不生气的情况下，最大化满意顾客数量
+// https://leetcode.cn/problems/grumpy-bookstore-owner/description/
 func MaxSatisfied(customers []int, grumpy []int, minutes int) int {
 	satisfied := 0
 

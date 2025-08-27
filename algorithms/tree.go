@@ -6,15 +6,13 @@ import (
 
 type TreeNode = data_structures.TreeNode
 
-/**
- * 树相关算法实现
- * Tree related algorithms
- */
+// 树相关算法实现
+// Tree related algorithms
 
-/**
- * 101. 对称二叉树
- * Symmetric Tree
- */
+// 101. 对称二叉树
+// Symmetric Tree
+// 判断二叉树是否镜像对称
+// https://leetcode.cn/problems/symmetric-tree/description/
 func IsSymmetric(root *data_structures.TreeNode) bool {
 	if root == nil {
 		return true
@@ -31,10 +29,10 @@ func isSameTree(p, q *data_structures.TreeNode) bool {
 		isSameTree(p.Right, q.Left)
 }
 
-/**
- * 104. 二叉树的最大深度
- * Maximum Depth of Binary Tree
- */
+// 104. 二叉树的最大深度
+// Maximum Depth of Binary Tree
+// 计算二叉树的最大深度（根节点到最远叶子节点的最长路径上的节点数）
+// https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/
 func MaxDepth(root *data_structures.TreeNode) int {
 	if root == nil {
 		return 0
@@ -47,10 +45,10 @@ func MaxDepth(root *data_structures.TreeNode) int {
 	return 1 + rightDepth
 }
 
-/**
- * 226. 翻转二叉树
- * Invert Binary Tree
- */
+// 226. 翻转二叉树
+// Invert Binary Tree
+// 翻转二叉树的左右子树
+// https://leetcode.cn/problems/invert-binary-tree/description/
 func invertTree(root *TreeNode) *TreeNode {
 	if root == nil {
 		return nil
@@ -64,10 +62,10 @@ func invertTree(root *TreeNode) *TreeNode {
 	return root
 }
 
-/**
- * 102. 二叉树的层序遍历
- * Binary Tree Level Order Traversal
- */
+// 102. 二叉树的层序遍历
+// Binary Tree Level Order Traversal
+// 按层次遍历二叉树，返回每层的节点值
+// https://leetcode.cn/problems/binary-tree-level-order-traversal/description/
 func LevelOrder(root *data_structures.TreeNode) [][]int {
 	if root == nil {
 		return [][]int{}
@@ -99,10 +97,10 @@ func LevelOrder(root *data_structures.TreeNode) [][]int {
 	return result
 }
 
-/**
- * 112. 路径总和
- * Path Sum
- */
+// 112. 路径总和
+// Path Sum
+// 判断二叉树中是否存在根节点到叶子节点的路径，其节点值之和等于目标值
+// https://leetcode.cn/problems/path-sum/description/
 func HasPathSum(root *data_structures.TreeNode, targetSum int) bool {
 	if root == nil {
 		return false
@@ -116,10 +114,10 @@ func HasPathSum(root *data_structures.TreeNode, targetSum int) bool {
 		HasPathSum(root.Right, targetSum-root.Val)
 }
 
-/**
- * 543. 二叉树的直径
- * Diameter of Binary Tree
- */
+// 543. 二叉树的直径
+// Diameter of Binary Tree
+// 计算二叉树的直径（任意两个节点间最长路径的长度）
+// https://leetcode.cn/problems/diameter-of-binary-tree/description/
 func DiameterOfBinaryTree(root *data_structures.TreeNode) int {
 	maxDiameter := 0
 
@@ -146,10 +144,10 @@ func DiameterOfBinaryTree(root *data_structures.TreeNode) int {
 	return maxDiameter
 }
 
-/**
- * 236. 二叉树的最近公共祖先
- * Lowest Common Ancestor of a Binary Tree
- */
+// 236. 二叉树的最近公共祖先
+// Lowest Common Ancestor of a Binary Tree
+// 找到二叉树中两个节点的最近公共祖先
+// https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/description/
 func LowestCommonAncestor(root, p, q *data_structures.TreeNode) *data_structures.TreeNode {
 	if root == nil || root == p || root == q {
 		return root
@@ -168,9 +166,9 @@ func LowestCommonAncestor(root, p, q *data_structures.TreeNode) *data_structures
 	return right
 }
 
-/**
- * 查找二叉树最深的一个节点
- */
+// 查找二叉树最深的一个节点
+// Find Deepest Node in Binary Tree
+// 找到二叉树中最深的一个叶子节点
 func findDeepestNode(root *TreeNode) *TreeNode {
 	if root == nil {
 		return nil

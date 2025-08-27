@@ -2,15 +2,13 @@ package algorithms
 
 import "algorithms-go/data_structures"
 
-/**
- * 链表相关算法实现
- * Linked List related algorithms
- */
+// 链表相关算法实现
+// Linked List related algorithms
 
-/**
- * 19. 删除链表的倒数第 N 个结点
- * Remove Nth Node From End of List
- */
+// 19. 删除链表的倒数第 N 个结点
+// Remove Nth Node From End of List
+// 删除链表的倒数第n个节点
+// https://leetcode.cn/problems/remove-nth-node-from-end-of-list/description/
 func RemoveNthFromEnd(head *data_structures.ListNode, n int) *data_structures.ListNode {
 	dummy := data_structures.NewListNode(0)
 	dummy.Next = head
@@ -34,10 +32,10 @@ func RemoveNthFromEnd(head *data_structures.ListNode, n int) *data_structures.Li
 	return dummy.Next
 }
 
-/**
- * 82. 删除排序链表中的重复元素 II
- * Remove Duplicates from Sorted List II
- */
+// 82. 删除排序链表中的重复元素 II
+// Remove Duplicates from Sorted List II
+// 删除排序链表中所有重复数字的节点，只保留原始链表中没有重复出现的数字
+// https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/description/
 func DeleteDuplicates(head *data_structures.ListNode) *data_structures.ListNode {
 	dummy := data_structures.NewListNode(0)
 	dummy.Next = head
@@ -61,10 +59,10 @@ func DeleteDuplicates(head *data_structures.ListNode) *data_structures.ListNode 
 	return dummy.Next
 }
 
-/**
- * 86. 分隔链表
- * Partition List
- */
+// 86. 分隔链表
+// Partition List
+// 将链表分隔为两部分，所有小于x的节点都在大于或等于x的节点之前
+// https://leetcode.cn/problems/partition-list/description/
 func Partition(head *data_structures.ListNode, x int) *data_structures.ListNode {
 	beforeHead := data_structures.NewListNode(0)
 	afterHead := data_structures.NewListNode(0)
@@ -88,10 +86,10 @@ func Partition(head *data_structures.ListNode, x int) *data_structures.ListNode 
 	return beforeHead.Next
 }
 
-/**
- * 92. 反转链表 II
- * Reverse Linked List II
- */
+// 92. 反转链表 II
+// Reverse Linked List II
+// 反转从位置left到位置right的链表节点
+// https://leetcode.cn/problems/reverse-linked-list-ii/description/
 func ReverseBetween(head *data_structures.ListNode, left, right int) *data_structures.ListNode {
 	if head == nil || left == right {
 		return head
@@ -120,6 +118,8 @@ func ReverseBetween(head *data_structures.ListNode, left, right int) *data_struc
 
 // 138. 随机链表的复制
 // Copy List with Random Pointer
+// 复制一个包含随机指针的链表
+// https://leetcode.cn/problems/copy-list-with-random-pointer/description/
 type RandomListNode struct {
 	Val    int
 	Next   *RandomListNode
@@ -164,10 +164,10 @@ func CopyRandomList(head *RandomListNode) *RandomListNode {
 	return nodeMap[head]
 }
 
-/**
- * 146. LRU 缓存
- * LRU Cache
- */
+// 146. LRU 缓存
+// LRU Cache
+// 设计和实现一个LRU（最近最少使用）缓存机制
+// https://leetcode.cn/problems/lru-cache/description/
 type LRUNode struct {
 	Key  int
 	Val  int
@@ -250,10 +250,10 @@ func (lru *LRUCache) removeTail() *LRUNode {
 	return lastNode
 }
 
-/**
- * 234. 回文链表
- * Palindrome Linked List
- */
+// 234. 回文链表
+// Palindrome Linked List
+// 判断一个链表是否为回文链表
+// https://leetcode.cn/problems/palindrome-linked-list/description/
 func IsPalindromeList(head *data_structures.ListNode) bool {
 	if head == nil || head.Next == nil {
 		return true
@@ -282,6 +282,8 @@ func IsPalindromeList(head *data_structures.ListNode) bool {
 	return true
 }
 
+// 辅助函数：反转链表
+// Helper function: reverse linked list
 func reverseList(head *data_structures.ListNode) *data_structures.ListNode {
 	var prev *data_structures.ListNode
 	curr := head

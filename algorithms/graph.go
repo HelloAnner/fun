@@ -4,15 +4,11 @@ import (
 	"algorithms-go/data_structures"
 )
 
-/**
- * 图相关算法实现
- * Graph related algorithms
- */
+// 图相关算法实现
+// Graph related algorithms
 
-/**
- * 133. 克隆图
- * Clone Graph
- */
+// 133. 克隆图
+// Clone Graph
 func CloneGraph(node *data_structures.GraphNode) *data_structures.GraphNode {
 	if node == nil {
 		return nil
@@ -39,10 +35,8 @@ func CloneGraph(node *data_structures.GraphNode) *data_structures.GraphNode {
 	return dfs(node)
 }
 
-/**
- * 752. 打开转盘锁
- * Open the Lock
- */
+// 752. 打开转盘锁
+// Open the Lock
 func OpenLock(deadends []string, target string) int {
 	deadSet := make(map[string]bool)
 	for _, dead := range deadends {
@@ -105,10 +99,8 @@ func getNextStates(state string) []string {
 	return result
 }
 
-/**
- * 547. 省份数量
- * Number of Provinces
- */
+// 547. 省份数量
+// Number of Provinces
 func FindCircleNum(isConnected [][]int) int {
 	n := len(isConnected)
 	visited := make([]bool, n)
@@ -134,10 +126,8 @@ func FindCircleNum(isConnected [][]int) int {
 	return provinces
 }
 
-/**
- * 207. 课程表
- * Course Schedule
- */
+// 207. 课程表
+// Course Schedule
 func CanFinish(numCourses int, prerequisites [][]int) bool {
 	graph := make([][]int, numCourses)
 	inDegree := make([]int, numCourses)
@@ -175,10 +165,8 @@ func CanFinish(numCourses int, prerequisites [][]int) bool {
 	return completed == numCourses
 }
 
-/**
- * 1971. 寻找图中是否存在路径
- * Find if Path Exists in Graph
- */
+// 1971. 寻找图中是否存在路径
+// Find if Path Exists in Graph
 func ValidPath(n int, edges [][]int, source, destination int) bool {
 	if source == destination {
 		return true

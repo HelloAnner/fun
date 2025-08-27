@@ -2,15 +2,13 @@ package algorithms
 
 import "sort"
 
-/**
- * 哈希表相关算法实现
- * Hash table related algorithms
- */
+// 哈希表相关算法实现
+// Hash table related algorithms
 
-/**
- * 2766. 重新放置石块
- * Relocate Marbles
- */
+// RelocateMarbles 2766. 重新放置石块
+// Relocate Marbles
+// 根据移动操作重新放置石块，返回最终石块位置的有序数组
+// https://leetcode.cn/problems/relocate-marbles/description/
 func RelocateMarbles(nums []int, moveFrom []int, moveTo []int) []int {
 	stoneSet := make(map[int]bool)
 	for _, num := range nums {
@@ -33,10 +31,10 @@ func RelocateMarbles(nums []int, moveFrom []int, moveTo []int) []int {
 	return result
 }
 
-/**
- * 1. 两数之和
- * https://leetcode.cn/problems/two-sum/description/
- */
+// 1. 两数之和
+// Two Sum
+// 在数组中找到两个数，使得它们的和等于目标值，返回这两个数的索引
+// https://leetcode.cn/problems/two-sum/description/
 func TwoSum(nums []int, target int) []int {
 	numMap := make(map[int]int)
 
@@ -51,10 +49,10 @@ func TwoSum(nums []int, target int) []int {
 	return []int{}
 }
 
-/**
- * 202. 快乐数
- * Happy Number  https://leetcode.cn/problems/happy-number/description/
- */
+// 202. 快乐数
+// Happy Number
+// 判断一个数是否为快乐数（重复计算各位数字平方和，最终能否得到1）
+// https://leetcode.cn/problems/happy-number/description/
 func IsHappy(n int) bool {
 	seen := make(map[int]bool)
 
@@ -76,10 +74,10 @@ func getNext(n int) int {
 	return totalSum
 }
 
-/**
- * 997. 找到小镇的法官
- * Find the Town Judge
- */
+// 997. 找到小镇的法官
+// Find the Town Judge
+// 在信任关系图中找到小镇法官（被所有人信任但不信任任何人）
+// https://leetcode.cn/problems/find-the-town-judge/description/
 func FindJudge(n int, trust [][]int) int {
 	if len(trust) < n-1 {
 		return -1
@@ -103,10 +101,10 @@ func FindJudge(n int, trust [][]int) int {
 	return -1
 }
 
-/**
- * 1436. 旅行终点站
- * Destination City
- */
+// 1436. 旅行终点站
+// Destination City
+// 在路径列表中找到旅行的终点站（只有入度没有出度的城市）
+// https://leetcode.cn/problems/destination-city/description/
 func DestCity(paths [][]string) string {
 	outgoing := make(map[string]bool)
 

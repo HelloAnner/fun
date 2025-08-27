@@ -2,8 +2,11 @@ package algorithms
 
 import "fmt"
 
-// MajorityElement 找到数组中的多数元素（出现次数大于 n/2 的元素）
+// 169. 多数元素
+// Majority Element
+// 找到数组中的多数元素（出现次数大于 n/2 的元素）
 // 使用排序方法：多数元素排序后一定在中间位置
+// https://leetcode.cn/problems/majority-element/description/
 func MajorityElement(nums []int) int {
 	// 创建副本进行排序
 	sorted := make([]int, len(nums))
@@ -21,7 +24,9 @@ func MajorityElement(nums []int) int {
 	return sorted[len(sorted)/2]
 }
 
-// MajorityElementByCount 使用计数方法找到多数元素
+// 169. 多数元素 - 计数方法
+// Majority Element - Count Method
+// 使用计数方法找到多数元素
 func MajorityElementByCount(nums []int) int {
 	counts := make(map[int]int)
 	for _, num := range nums {
@@ -40,7 +45,9 @@ func MajorityElementByCount(nums []int) int {
 	return result
 }
 
-// RotateArray 将数组向右轮转 k 个位置
+// 189. 轮转数组
+// Rotate Array
+// 将数组向右轮转 k 个位置
 func RotateArray(nums []int, k int) []int {
 	n := len(nums)
 	if n == 0 {
@@ -63,7 +70,9 @@ func RotateArray(nums []int, k int) []int {
 	return result
 }
 
-// RotateArrayInPlace 原地轮转数组
+// 189. 轮转数组 - 原地实现
+// Rotate Array - In Place
+// 原地轮转数组，使用三次反转的方法
 func RotateArrayInPlace(nums []int, k int) {
 	n := len(nums)
 	if n == 0 {
@@ -81,7 +90,8 @@ func RotateArrayInPlace(nums []int, k int) {
 	reverse(nums, k, n-1) // 反转后 n-k 个元素
 }
 
-// reverse 反转数组的指定部分
+// 辅助函数：反转数组的指定部分
+// Helper function: reverse specified part of array
 func reverse(nums []int, start, end int) {
 	for start < end {
 		nums[start], nums[end] = nums[end], nums[start]
@@ -126,7 +136,9 @@ func printMatrix(matrix [][]int) {
 	}
 }
 
-// RotateMatrix 顺时针旋转 90 度矩阵
+// 48. 旋转图像
+// Rotate Image
+// 顺时针旋转 90 度矩阵
 func RotateMatrix(matrix [][]int) {
 	n := len(matrix)
 	if n == 0 {
@@ -148,7 +160,9 @@ func RotateMatrix(matrix [][]int) {
 	}
 }
 
-// RotateMatrixInPlace 原地旋转矩阵
+// 48. 旋转图像 - 原地实现
+// Rotate Image - In Place
+// 原地旋转矩阵，先转置再水平翻转
 func RotateMatrixInPlace(matrix [][]int) {
 	n := len(matrix)
 	if n == 0 {

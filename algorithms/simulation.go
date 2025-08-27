@@ -5,15 +5,11 @@ import (
 	"sort"
 )
 
-/**
- * 模拟算法相关实现
- * Simulation algorithms
- */
+// 模拟算法相关实现
+// Simulation algorithms
 
-/**
- * 36. 有效的数独
- * Valid Sudoku
- */
+// 36. 有效的数独
+// Valid Sudoku
 func IsValidSudoku(board [][]string) bool {
 	rows := make([]map[string]bool, 9)
 	cols := make([]map[string]bool, 9)
@@ -47,10 +43,8 @@ func IsValidSudoku(board [][]string) bool {
 	return true
 }
 
-/**
- * 48. 旋转图像
- * Rotate Image
- */
+// Rotate 48. 旋转图像
+// Rotate Image
 func Rotate(matrix [][]int) {
 	n := len(matrix)
 
@@ -69,10 +63,8 @@ func Rotate(matrix [][]int) {
 	}
 }
 
-/**
- * 54. 螺旋矩阵
- * Spiral Matrix
- */
+// SpiralOrder 54. 螺旋矩阵
+// Spiral Matrix
 func SpiralOrder(matrix [][]int) []int {
 	if len(matrix) == 0 {
 		return []int{}
@@ -117,10 +109,8 @@ func SpiralOrder(matrix [][]int) []int {
 	return result
 }
 
-/**
- * 73. 矩阵置零
- * Set Matrix Zeroes
- */
+// 73. 矩阵置零
+// Set Matrix Zeroes
 func SetZeroes(matrix [][]int) {
 	m := len(matrix)
 	n := len(matrix[0])
@@ -177,10 +167,8 @@ func SetZeroes(matrix [][]int) {
 	}
 }
 
-/**
- * 274. H 指数
- * H-Index
- */
+// 274. H 指数
+// H-Index
 func HIndex(citations []int) int {
 	citationsCopy := make([]int, len(citations))
 	copy(citationsCopy, citations)
@@ -200,10 +188,8 @@ func HIndex(citations []int) int {
 	return h
 }
 
-/**
- * 1103. 分糖果 II
- * Distribute Candies to People
- */
+// 1103. 分糖果 II
+// Distribute Candies to People
 func DistributeCandies(candies, numPeople int) []int {
 	result := make([]int, numPeople)
 	give := 1
@@ -223,10 +209,8 @@ func DistributeCandies(candies, numPeople int) []int {
 	return result
 }
 
-/**
- * 3195 找到所有 Ones 的最小矩形面积 I
- * https://leetcode.cn/problems/find-the-minimum-area-to-cover-all-ones-i/?envType=daily-question&envId=2025-08-22
- */
+// 3195 找到所有 Ones 的最小矩形面积 I
+// https://leetcode.cn/problems/find-the-minimum-area-to-cover-all-ones-i/?envType=daily-question&envId=2025-08-22
 func minimumArea(grid [][]int) int {
 	// 寻找四个方向的边界位置
 	left, right := math.MaxInt, 0

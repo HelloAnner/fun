@@ -1,14 +1,10 @@
 package algorithms
 
-/**
- * 排序相关算法实现
- * Sorting related algorithms
- */
+// 排序相关算法实现
+// Sorting related algorithms
 
-/**
- * 快速排序
- * Quick Sort
- */
+// 快速排序
+// Quick Sort
 func QuickSort(arr []int) []int {
 	if len(arr) <= 1 {
 		return arr
@@ -33,10 +29,8 @@ func QuickSort(arr []int) []int {
 	return result
 }
 
-/**
- * 归并排序
- * Merge Sort
- */
+// 归并排序
+// Merge Sort
 func MergeSort(arr []int) []int {
 	if len(arr) <= 1 {
 		return arr
@@ -68,10 +62,8 @@ func mergeSortHelper(left, right []int) []int {
 	return result
 }
 
-/**
- * 堆排序
- * Heap Sort
- */
+// 堆排序
+// Heap Sort
 func HeapSort(arr []int) []int {
 	result := make([]int, len(arr))
 	copy(result, arr)
@@ -110,10 +102,8 @@ func heapify(arr []int, n, i int) {
 	}
 }
 
-/**
- * 冒泡排序
- * Bubble Sort
- */
+// 冒泡排序
+// Bubble Sort
 func BubbleSort(arr []int) []int {
 	result := make([]int, len(arr))
 	copy(result, arr)
@@ -130,10 +120,8 @@ func BubbleSort(arr []int) []int {
 	return result
 }
 
-/**
- * 插入排序
- * Insertion Sort
- */
+// 插入排序
+// Insertion Sort
 func InsertionSort(arr []int) []int {
 	result := make([]int, len(arr))
 	copy(result, arr)
@@ -153,10 +141,8 @@ func InsertionSort(arr []int) []int {
 	return result
 }
 
-/**
- * 选择排序
- * Selection Sort
- */
+// 选择排序
+// Selection Sort
 func SelectionSort(arr []int) []int {
 	result := make([]int, len(arr))
 	copy(result, arr)
@@ -179,10 +165,8 @@ func SelectionSort(arr []int) []int {
 	return result
 }
 
-/**
- * 计数排序
- * Counting Sort
- */
+// 计数排序
+// Counting Sort
 func CountingSort(arr []int) []int {
 	if len(arr) == 0 {
 		return arr

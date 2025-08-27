@@ -2,15 +2,13 @@ package algorithms
 
 import "fmt"
 
-/**
- * 动态规划相关算法实现
- * Dynamic Programming related algorithms
- */
+// 动态规划相关算法实现
+// Dynamic Programming related algorithms
 
-/**
- * 70. 爬楼梯
- * Climbing Stairs
- */
+// ClimbStairs 70. 爬楼梯
+// Climbing Stairs
+// 计算爬到n阶楼梯的不同方法数（每次可以爬1或2阶）
+// https://leetcode.cn/problems/climbing-stairs/description/
 func ClimbStairs(n int) int {
 	if n <= 2 {
 		return n
@@ -28,10 +26,10 @@ func ClimbStairs(n int) int {
 	return prev1
 }
 
-/**
- * 322. 零钱兑换
- * Coin Change
- */
+// CoinChange 322. 零钱兑换
+// Coin Change
+// 用最少数量的硬币凑成总金额，如果无法凑成返回-1
+// https://leetcode.cn/problems/coin-change/description/
 func CoinChange(coins []int, amount int) int {
 	dp := make([]int, amount+1)
 	for i := range dp {
@@ -55,10 +53,10 @@ func CoinChange(coins []int, amount int) int {
 	return dp[amount]
 }
 
-/**
- * 300. 最长递增子序列
- * Longest Increasing Subsequence
- */
+// LengthOfLIS 300. 最长递增子序列
+// Longest Increasing Subsequence
+// 找到数组中最长的严格递增子序列的长度
+// https://leetcode.cn/problems/longest-increasing-subsequence/description/
 func LengthOfLIS(nums []int) int {
 	if len(nums) == 0 {
 		return 0
@@ -89,10 +87,10 @@ func LengthOfLIS(nums []int) int {
 	return maxLen
 }
 
-/**
- * 198. 打家劫舍
- * House Robber
- */
+// Rob 198. 打家劫舍
+// House Robber
+// 在不能抢劫相邻房屋的情况下，找到能抢劫的最大金额
+// https://leetcode.cn/problems/house-robber/description/
 func Rob(nums []int) int {
 	if len(nums) == 0 {
 		return 0
@@ -120,10 +118,10 @@ func max(a, b int) int {
 	return b
 }
 
-/**
- * 139. 单词拆分
- * Word Break
- */
+// WordBreak 139. 单词拆分
+// Word Break
+// 判断字符串是否可以被字典中的单词拼接而成
+// https://leetcode.cn/problems/word-break/description/
 func WordBreak(s string, wordDict []string) bool {
 	wordSet := make(map[string]bool)
 	for _, word := range wordDict {
@@ -145,10 +143,10 @@ func WordBreak(s string, wordDict []string) bool {
 	return dp[len(s)]
 }
 
-/**
- * 1035. 不相交的线
- * Uncrossed Lines
- */
+// MaxUncrossedLines 1035. 不相交的线
+// Uncrossed Lines
+// 在两个数组中找到不相交的连线最大数量（最长公共子序列问题）
+// https://leetcode.cn/problems/uncrossed-lines/description/
 func MaxUncrossedLines(nums1, nums2 []int) int {
 	m := len(nums1)
 	n := len(nums2)
@@ -170,10 +168,10 @@ func MaxUncrossedLines(nums1, nums2 []int) int {
 	return dp[m][n]
 }
 
-/**
- * 1216. 验证回文字符串 III
- * Valid Palindrome III
- */
+// IsValidPalindrome 1216. 验证回文字符串 III
+// Valid Palindrome III
+// 判断是否最多删除k个字符后字符串能变成回文串
+// https://leetcode.cn/problems/valid-palindrome-iii/description/
 func IsValidPalindrome(s string, k int) bool {
 	n := len(s)
 	dp := make([][]int, n)
@@ -199,10 +197,10 @@ func IsValidPalindrome(s string, k int) bool {
 	return n-dp[0][n-1] <= k
 }
 
-/**
- * 1186. 删除一次得到子数组最大和
- * Maximum Subarray Sum with One Deletion
- */
+// MaximumSum 1186. 删除一次得到子数组最大和
+// Maximum Subarray Sum with One Deletion
+// 在最多删除一个元素的情况下，找到子数组的最大和
+// https://leetcode.cn/problems/maximum-subarray-sum-with-one-deletion/description/
 func MaximumSum(arr []int) int {
 	n := len(arr)
 	if n == 1 {
@@ -234,10 +232,10 @@ func MaximumSum(arr []int) int {
 	return result
 }
 
-/**
- * 2708. 一个小组的最大实力值
- * Maximum Strength of a Group
- */
+// 2708. 一个小组的最大实力值
+// Maximum Strength of a Group
+// 从数组中选择一个非空子集，计算子集中所有元素的乘积最大值
+// https://leetcode.cn/problems/maximum-strength-of-a-group/description/
 func MaxStrength(nums []int) int64 {
 	if len(nums) == 1 {
 		return int64(nums[0])

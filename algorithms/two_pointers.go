@@ -5,15 +5,11 @@ import (
 	"strings"
 )
 
-/**
- * 双指针相关算法实现
- * Two pointers related algorithms
- */
+// 双指针相关算法实现
+// Two pointers related algorithms
 
-/**
- * 977. 有序数组的平方
- * Squares of a Sorted Array
- */
+// 977. 有序数组的平方
+// Squares of a Sorted Array
 func SortedSquares(nums []int) []int {
 	n := len(nums)
 	result := make([]int, n)
@@ -35,10 +31,8 @@ func SortedSquares(nums []int) []int {
 	return result
 }
 
-/**
- * 88. 合并两个有序数组
- * Merge Sorted Array
- */
+// 88. 合并两个有序数组
+// Merge Sorted Array
 func Merge(nums1 []int, m int, nums2 []int, n int) {
 	i, j, k := m-1, n-1, m+n-1
 
@@ -60,10 +54,8 @@ func Merge(nums1 []int, m int, nums2 []int, n int) {
 	}
 }
 
-/**
- * 125. 验证回文串
- * Valid Palindrome
- */
+// 125. 验证回文串
+// Valid Palindrome
 func IsPalindrome(s string) bool {
 	// 清理字符串：转换为小写并只保留字母和数字
 	reg := regexp.MustCompile(`[^a-zA-Z0-9]`)
@@ -82,10 +74,8 @@ func IsPalindrome(s string) bool {
 	return true
 }
 
-/**
- * 392. 判断子序列
- * Is Subsequence
- */
+// 392. 判断子序列
+// Is Subsequence
 func IsSubsequence(s, t string) bool {
 	i, j := 0, 0
 
@@ -99,10 +89,8 @@ func IsSubsequence(s, t string) bool {
 	return i == len(s)
 }
 
-/**
- * 151. 反转字符串中的单词
- * Reverse Words in a String
- */
+// 151. 反转字符串中的单词
+// Reverse Words in a String
 func ReverseWords(s string) string {
 	// 去除首尾空格并按空格分割
 	words := strings.Fields(s)
