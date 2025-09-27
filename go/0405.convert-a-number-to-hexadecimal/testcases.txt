@@ -1,0 +1,9 @@
+input:
+26
+output:
+"1a"
+
+input:
+-1
+output:
+"ffffffff"

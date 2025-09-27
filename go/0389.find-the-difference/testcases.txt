@@ -1,0 +1,11 @@
+input:
+"abcd"
+"abcde"
+output:
+"e"
+
+input:
+""
+"y"
+output:
+"y"

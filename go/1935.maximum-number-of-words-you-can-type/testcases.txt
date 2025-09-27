@@ -1,0 +1,17 @@
+input:
+"hello world"
+"ad"
+output:
+1
+
+input:
+"leet code"
+"lt"
+output:
+1
+
+input:
+"leet code"
+"e"
+output:
+0

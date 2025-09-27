@@ -4,61 +4,66 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Go-based algorithms and data structures repository containing implementations of common algorithms organized by category. The codebase includes:
+这是一个基于Go语言的算法和数据结构仓库，使用leetgo工具管理LeetCode题目。仓库包含：
 
-- **Algorithms**: Organized by type (sorting, graph, dynamic programming, etc.) in `/algorithms/`
-- **Data Structures**: Core data structure definitions in `/data_structures/`
-- **Engineering**: Specialized implementations like Bloom filters
-- **Jupyter Notebooks**: Problem solutions organized by algorithm category
+- **LeetCode Solutions**: 在 `/go/` 目录中按题目编号组织的解决方案
+- **Data Structures**: 核心数据结构定义在 `/data_structures/`
+- **Engineering**: 专门的实现如布隆过滤器在 `/engineering/`
+- **Leetgo Configuration**: 通过 `leetgo.yaml` 配置文件管理
 
 ## Development Commands
 
-**Build and Format:**
+**Leetgo Commands:**
 ```bash
-go build ./...          # Build all packages
-go fmt ./...           # Format all Go code
+leetgo pick <problem-id>    # 获取并生成LeetCode题目
+leetgo test                 # 运行当前题目的测试
+leetgo submit               # 提交解决方案
 ```
 
-**Testing:**
+**Go Commands:**
 ```bash
-go test ./...          # Run all tests (currently no test files exist)
+go build ./...              # 构建所有包
+go fmt ./...               # 格式化所有Go代码
+go mod tidy                # 清理模块依赖
 ```
 
-**Module Management:**
+**Individual Problem Testing:**
 ```bash
-go mod tidy            # Clean up module dependencies
+cd go/<problem-folder>      # 进入具体题目目录
+go run solution.go          # 运行解决方案
 ```
 
 ## Code Structure
 
-**Main Packages:**
-- `algorithms-go/algorithms` - Algorithm implementations
-- `algorithms-go/data_structures` - Core data structures
-- `algorithms-go/engineering` - Specialized implementations
+**Main Directories:**
+- `go/` - LeetCode题目解决方案，按题目编号组织（如 `0001.two-sum/`）
+- `data_structures/` - 核心数据结构定义
+- `engineering/` - 专门的工程实现
 
 **Key Data Structures:**
-- `ListNode` - Singly linked list node (`data_structures/list_node.go:7`)
-- `TreeNode` - Binary tree node (`data_structures/tree_node.go`)
-- `GraphNode` - Graph node (`data_structures/graph_node.go`)
+- `ListNode` - 单链表节点 (`data_structures/list_node.go`)
+- `TreeNode` - 二叉树节点 (`data_structures/tree_node.go`)
+- `GraphNode` - 图节点 (`data_structures/graph_node.go`)
+- `BitArray` - 位数组 (`data_structures/bit_array.go`)
 
-**Algorithm Categories:**
-- Array manipulation, binary search, bit manipulation
-- Dynamic programming, graph algorithms, greedy algorithms  
-- Hash-based algorithms, math problems, prefix sums
-- Recursion, sliding window, sorting, stack operations
-- String algorithms, tree algorithms, two pointers
+**LeetCode Solution Structure:**
+每个题目目录包含：
+- `solution.go` - 主要解决方案文件
+- `question.md` - 题目描述（中文）
+- `testcases.txt` - 测试用例
+
+## Leetgo Configuration
+
+项目使用 `leetgo.yaml` 配置：
+- 默认语言：Go
+- 题目语言：中文 (zh)
+- 输出目录：`go/`
+- LeetCode网站：leetcode.cn
 
 ## Code Style
 
-- Go 1.21+ syntax and conventions
-- Chinese and English comments for algorithm descriptions
-- Package-level organization by algorithm type
-- Data structures defined separately from algorithms
-- No existing test suite (opportunity to add tests)
-
-## Common Development Tasks
-
-1. **Adding new algorithms**: Place in appropriate category file in `/algorithms/`
-2. **Extending data structures**: Modify files in `/data_structures/`
-3. **Creating tests**: Add `_test.go` files alongside implementations
-4. **Formatting**: Use `go fmt` before committing changes
+- Go 1.22语法和约定
+- 中文注释和题目描述
+- 每个题目独立的包结构（package main）
+- 使用leetgo提供的测试工具
+- 遵循LeetCode题目命名约定

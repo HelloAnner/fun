@@ -1,0 +1,17 @@
+input:
+"zbbz"
+3
+output:
+"aaaz"
+
+input:
+"xaxcd"
+4
+output:
+"aawcd"
+
+input:
+"lol"
+0
+output:
+"lol"

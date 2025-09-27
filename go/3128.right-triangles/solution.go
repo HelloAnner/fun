@@ -1,0 +1,30 @@
+// Created by anner at 2025/09/27 08:56
+// leetgo: 1.4.15
+// https://leetcode.cn/problems/right-triangles/
+
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+
+	. "github.com/j178/leetgo/testutils/go"
+)
+
+// @lc code=begin
+
+func numberOfRightTriangles(grid [][]int) (ans int64) {
+
+	return
+}
+
+// @lc code=end
+
+func main() {
+	stdin := bufio.NewReader(os.Stdin)
+	grid := Deserialize[[][]int](ReadLine(stdin))
+	ans := numberOfRightTriangles(grid)
+
+	fmt.Println("\noutput:", Serialize(ans))
+}
